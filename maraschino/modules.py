@@ -564,6 +564,11 @@ AVAILABLE_MODULES = [
                 'description': 'Transmission Hostname',
                 },
                 {
+                'key': 'transmission_rpcurl',
+                'value': 'transmssion',
+                'description': 'Transmission RPC URL',
+                },
+                {
                 'key': 'transmission_port',
                 'value': '9091',
                 'description': 'Transmission Port',

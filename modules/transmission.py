@@ -29,7 +29,8 @@ def xhr_transmission():
         'address' : get_setting_value('transmission_ip'),
         'port' : get_setting_value('transmission_port'),
         'user' : get_setting_value('transmission_user') or None,
-        'password' : get_setting_value('transmission_password') or None
+        'password' : get_setting_value('transmission_password') or None,
+	'rpcurl' : get_setting_value('transmission_rpcurl') or None
     }
     
     connection = False

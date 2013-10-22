@@ -59,7 +59,7 @@ class Client(object):
     Client is the class handling the Transmission JSON-RPC client protocol.
     """
 
-    def __init__(self, address='localhost', port=DEFAULT_PORT, user=None, password=None, http_handler=None, timeout=None):
+    def __init__(self, address='localhost', port=DEFAULT_PORT, user=None, password=None, http_handler=None, timeout=None, rpcurl='transmission'):
         if isinstance(timeout, (int, long, float)):
             self._query_timeout = float(timeout)
         else:
@@ -67,7 +67,7 @@ class Client(object):
         urlo = urlparse.urlparse(address)
         if urlo.scheme == '':
             base_url = 'http://' + address + ':' + str(port)
-            self.url = base_url + '/transmission/rpc'
+            self.url = base_url + '/' + rpcurl + '/rpc'
         else:
             if urlo.port:
                 self.url = urlo.scheme + '://' + urlo.hostname + ':' + str(urlo.port) + urlo.path
